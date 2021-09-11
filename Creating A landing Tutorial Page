@@ -1,0 +1,6 @@
+1. Create New Application - cmd> ionic start myApp blank --type=ionic-angular
+2. Build App cmd - ionic build
+3. Add android to the project - cmd> npx cap add android
+4. Create guard cmd> ionic g guard guards/intro --implements CanLoad
+5. Import HttpClientModule to your app module > import { HttpClientModule } from '@angular/common/http'; add to imports > HttpClientModule
+ notes 

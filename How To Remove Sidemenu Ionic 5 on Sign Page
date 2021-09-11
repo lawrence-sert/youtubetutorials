@@ -1,0 +1,13 @@
+1. Create New Application - cmd> ionic start myApp blank --type=ionic-angular
+2. Build App cmd - ionic build
+
+
+In my case in ionic 4 app, I did the following in welcome.page.ts file. welcome.page.ts is the page in which I want to hide split pane.
+
+import {  MenuController } from '@ionic/angular';
+
+constructor( public menuCtrl: MenuController){}
+
+ionViewWillEnter() {
+ this.menuCtrl.enable(false);
+}

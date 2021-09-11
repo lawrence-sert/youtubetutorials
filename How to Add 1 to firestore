@@ -1,0 +1,31 @@
+var that = this;
+				this.firestore.firestore.collection("recipes").where("id", "==", pageId)
+				.get()
+				.then(function(querySnapshot) {
+
+					querySnapshot.forEach(function(doc) {
+						// doc.data() is never undefined for query doc snapshots
+						console.log(doc.id, " => ", doc.data());
+
+						return that.firestore.firestore.runTransaction(function(transaction) {
+							// This code may get re-run multiple times if there are conflicts.
+							return transaction.get(doc.ref).then(function(doc) {
+								if (!doc.exists) {
+									throw "Document does not exist!";
+								}
+
+								//THIS IS WHERE TO DO THE INCREMENT
+								var new_score = doc.data().recipe_like + 1;
+								transaction.update(doc.ref, { recipe_like: new_score });
+							});
+						}).then(function() {
+							console.log("Transaction successfully committed!");
+						}).catch(function(error) {
+							console.log("Transaction failed: ", error);
+						});
+
+					});
+				})
+				.catch(function(error) {
+					console.log("Error getting documents: ", error);
+				});

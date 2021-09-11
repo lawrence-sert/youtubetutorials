@@ -1,0 +1,1 @@
+firestore-import -a park-fire.json -b projects.json

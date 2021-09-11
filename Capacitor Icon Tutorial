@@ -1,0 +1,15 @@
+1. Create New Application - cmd> ionic start myApp blank --type=ionic-angular
+2. Build App cmd - ionic build
+3. Add android to the project - cmd> npx cap add android
+4. Open Project in Android Studio cmd> npx cap open android
+5. Create icon using any image editor size should be 1024 X 1024 for icon
+6. android Studio select app > res right click then select new > image asset 
+7. Configure Image Asset Dialog
+Select Asset Type = image and set path to where you saved your icon image - Talk about the other options for formating the icon
+8. Preview window. If you need to scale please do so by using the trim option.
+9. Start your Android emulator to preview the icon 
+
+
+
+live reload purposes
+ionic capacitor run android --livereload --external

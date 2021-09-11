@@ -1,0 +1,3 @@
+1. Create New Application - cmd> ionic start myApp blank --type=ionic-angular
+2. Build App cmd - ionic build
+3. Add android to the project - cmd> npx cap add android

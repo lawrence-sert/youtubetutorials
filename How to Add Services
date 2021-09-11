@@ -1,0 +1,4 @@
+ng g class model/tips --type=model
+
+
+ionic g s services/tips

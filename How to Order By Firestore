@@ -1,0 +1,2 @@
+getEmployees() {
+return this.firestore.collection('employee', ref => ref.orderBy('name','desc')).snapshotChanges(); }
